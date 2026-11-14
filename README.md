@@ -75,3 +75,43 @@ Add these lines under `[main]`:
 max_parallel_downloads=10
 defaultyes=true
 ```
+### Cloning the repo using install script
+Run:
+```bash
+sudo dnf install git
+# May require reboot
+```
+After installation, go to its directory.  Make the install script executable with:
+```bash
+chmod +x install.sh
+```
+And run:
+```bash
+./install.sh
+```
+Now edit the configuration for greetd such that it boots to Tuigreet.
+```bash
+sudo nano /etc/greetd/config.toml
+```
+Change to the following configuration:
+```
+[default_session]
+command = "tuigreet --cmd niri"
+user = "greetd"
+```
+```
+[preferred]
+default=gnome;gtk
+org.freedesktop.impl.portal.Screenshot=wlr
+org.freedesktop.impl.portal.ScreenCast=wlr
+```
+```
+[preferred]
+# ... existing config
+org.freedesktop.impl.portal.Secret=gnome-keyring
+```
+Append or uncomment this line in `/etc/pam.d/passwd`:
+```
+password    optional    pam_gnome_keyring.so use_authtok
+```
+### Booting into Niri
