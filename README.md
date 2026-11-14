@@ -1,5 +1,6 @@
 # fedora-polarfeather-rice
-My Linux ricing setup on minimal Fedora through the Fedora Everything netinstaller, with Niri and Noctalia shell.
+My Linux ricing setup on minimal Fedora through the Fedora Everything netinstaller, with Niri and Noctalia shell.  
+This is mainly for my own reference but I am just posting here in case anybody sees this.
 
 *Note: All of this was done on the Lenovo 300e Chromebook.  
 Some steps may require workarounds or may not be applicable to your setup.*
@@ -99,12 +100,14 @@ Change to the following configuration:
 command = "tuigreet --cmd niri"
 user = "greetd"
 ```
+Add or edit the configuration in `~/.config/xdg-desktop-portal/portal.conf`
 ```
 [preferred]
 default=gnome;gtk
 org.freedesktop.impl.portal.Screenshot=wlr
 org.freedesktop.impl.portal.ScreenCast=wlr
 ```
+Set the portal Secret provider in `~/.config/xdg-desktop-portal/portal.conf`
 ```
 [preferred]
 # ... existing config
