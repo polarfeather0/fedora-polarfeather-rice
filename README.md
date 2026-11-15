@@ -90,17 +90,4 @@ And run:
 ```bash
 ./install.sh
 ```
-Add or edit the configuration in `~/.config/xdg-desktop-portal/portal.conf`
-```
-[preferred]
-default=gnome;gtk
-org.freedesktop.impl.portal.Screenshot=wlr
-org.freedesktop.impl.portal.ScreenCast=wlr
-```
-Set the portal Secret provider in `~/.config/xdg-desktop-portal/portal.conf`
-```
-[preferred]
-# ... existing config
-org.freedesktop.impl.portal.Secret=gnome-keyring
-```
 ### Booting into Niri
