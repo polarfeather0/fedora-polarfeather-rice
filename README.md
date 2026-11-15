@@ -1,6 +1,6 @@
-# fedora-polarfeather-rice
+# fedora-polarfeather-rice (WIP)
 My Linux ricing setup on minimal Fedora through the Fedora Everything netinstaller, with Niri and Noctalia shell.  
-This is mainly for my own reference but I am just posting here in case anybody sees this.
+This is mainly for my own reference but I am just posting here in case anybody is doing something similar and needs some guidance.
 
 *Note: All of this was done on the Lenovo 300e Chromebook.  
 Some steps may require workarounds or may not be applicable to your setup.*
@@ -35,12 +35,12 @@ Then, just click "Begin Installation" at the bottom right and wait for the insta
 
 ## 2. Post-installation
 ### Wi-Fi troubleshooting
-If you are connecting to Wi-Fi, you might face problems trying to connect to Wi-Fi. \
-Check whether you are having Wi-Fi issues with `nmcli device`. If you are only seeing `loopback`, that means you have problems connecting to Wi-Fi.\
+If you are connecting to Wi-Fi, you might face problems trying to connect to Wi-Fi.  
+Check whether you are having Wi-Fi issues with `nmcli device`. If you are only seeing `loopback`, that means you have problems connecting to Wi-Fi.  
 \
 My issue when doing the installation was mainly due to missing firmware packages so I will go through that. \
 \
-Firstly, you need to download some firmware packages and copy them onto a DIFFERENT USB stick. \
+Firstly, you need to download some firmware packages and copy them onto a **DIFFERENT** USB stick. \
 These are the packages I had to install:
 - iwlwifi-mld-firmware
 - iwlwifi-mvm-firmware
@@ -65,24 +65,13 @@ sudo rpm -ivh --nosignature ./*.rpm
 This will install the required firmware packages and allow you to connect to Wi-Fi. \
 After that, reboot the system with `reboot`. You should now be able to connect to Wi-Fi.
 
-### Maximizing DNF download speed
-Edit the DNF configuration at `/etc/dnf/dnf.conf`:
-```bash
-sudo nano /etc/dnf/dnf.conf
-```
-Add these lines under `[main]`:
-```
-[main]
-max_parallel_downloads=10
-defaultyes=true
-```
 ### Cloning the repo using install script
 Run:
 ```bash
 sudo dnf install git
 # May require reboot
 ```
-After installation, go to its directory.  Make the install script executable with:
+After installation, `cd` to its directory.  Make the install script executable with:
 ```bash
 chmod +x install.sh
 ```
@@ -90,4 +79,8 @@ And run:
 ```bash
 ./install.sh
 ```
-### Booting into Niri
+This script will add a lot of configurations and packages needed. Check `package-list.txt` and the `config` folder for more details.  
+Reboot after the script is done. You may delete this repository after it has finished.
+
+## 3. Conclusion
+Of course, I am still working on this and I may be slow with updates due to schoolwork. Rest assured I will try update this when I have the free time to do so. For now, enjoy!
