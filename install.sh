@@ -20,3 +20,6 @@ curl -fsS https://dl.brave.com/install.sh | FLAVOR=origin sh
 
 sudo authselect enable-feature with-pam-gnome-keyring
 sudo mv ./config/greetd/config.toml /etc/greetd/config.toml
+sudo cp ./config/passwd/passwd /etc/pam.d/passwd
+mkdir -p ~/.config/xdg-desktop-portal/
+sudo cp ./config/xdg-desktop-portal/portal.conf ~/.config/xdg-desktop-portal/

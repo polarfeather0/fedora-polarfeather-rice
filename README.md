@@ -90,16 +90,6 @@ And run:
 ```bash
 ./install.sh
 ```
-Now edit the configuration for greetd such that it boots to Tuigreet.
-```bash
-sudo nano /etc/greetd/config.toml
-```
-Change to the following configuration:
-```
-[default_session]
-command = "tuigreet --cmd niri"
-user = "greetd"
-```
 Add or edit the configuration in `~/.config/xdg-desktop-portal/portal.conf`
 ```
 [preferred]
@@ -112,9 +102,5 @@ Set the portal Secret provider in `~/.config/xdg-desktop-portal/portal.conf`
 [preferred]
 # ... existing config
 org.freedesktop.impl.portal.Secret=gnome-keyring
-```
-Append or uncomment this line in `/etc/pam.d/passwd`:
-```
-password    optional    pam_gnome_keyring.so use_authtok
 ```
 ### Booting into Niri
