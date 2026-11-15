@@ -72,6 +72,10 @@ Run:
 sudo dnf install git
 # May require reboot to use git
 ```
+You now need to clone this repository to install the necessary files. Do that with:
+```bash
+git clone https://github.com/polarfeather0/fedora-polarfeather-rice.git
+```
 After installation, `cd` to its directory.  Make the install script executable with:
 ```bash
 chmod +x install.sh
