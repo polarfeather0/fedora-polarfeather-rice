@@ -19,3 +19,4 @@ xdg-user-dirs-update
 curl -fsS https://dl.brave.com/install.sh | FLAVOR=origin sh
 
 sudo authselect enable-feature with-pam-gnome-keyring
+sudo mv ./config/greetd/config.toml /etc/greetd/config.toml
